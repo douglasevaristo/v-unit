@@ -1,0 +1,6 @@
+/*
+ MIT
+*/
+;(function(h,g){var b={settings:{stylesheetId:"v-unit-sheet",executionInterval:100},viewportSize:{height:0,width:0},init:function(){b.viewportHasChanged();b.setViewportObserver()},setViewportObserver:function(){return h.setInterval(b.viewportHasChanged,b.settings.executionInterval)},viewportHasChanged:function(){var a=b.viewportSize.height,c=b.viewportSize.width,d=b.viewportCalculator();d.height==a&&d.width==c||b.generalHandler()},createStylesheet:function(){var a=document.createElement("style");a.rel=
+"stylesheet";a.type="text/css";a.id=b.settings.stylesheetId;return a},setStylesheetCSSRules:function(a){for(var c=b.viewportCalculator(),d=c.height/100,c=c.width/100,f="",e=1;100>=e;e++)f+=".vh"+e+"{height:"+Math.round(d*e)+"px;}.vw"+e+"{width:"+Math.round(c*e)+"px;}\n";a.styleSheet?a.styleSheet.cssText=f:a.appendChild(document.createTextNode(f))},appendStylesheetOnHead:function(a){var c=document.getElementById(b.settings.stylesheetId),d=document.getElementsByTagName("head")[0];c&&d.removeChild(c);
+d.appendChild(a)},viewportCalculator:function(){var a={height:g.documentElement.clientHeight,width:g.documentElement.clientWidth};return b.viewportSize=a},generalHandler:function(){var a=b.createStylesheet();b.setStylesheetCSSRules(a);b.appendStylesheetOnHead(a)}};b.init()})(window,document);
