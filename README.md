@@ -15,6 +15,16 @@ Looks horrible but shows the point. A fancy one is on the way :)
 
 You're done!
 
+## Support
+So far, tested on:
+- IE8+
+- Chrome
+- Firefox
+- Chrome for Android
+- Android Browser 4.3
+ 
+More to come.
+
 ## How it works
 `v-unit.js` calculates the browser viewport dimensions and creates CSS rules ranging from 1% to 100% on both `width` and `height`. These rules are then inserted into a CSS stylesheet which is appended on the fly to the `head` tag.
 
