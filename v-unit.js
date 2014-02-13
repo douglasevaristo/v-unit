@@ -85,7 +85,8 @@
         // Appends the stylesheet on the head tag
         appendStylesheetOnHead: function(stylesheet) {
             var legacyStylesheet = doc.getElementById(VUnit.settings.stylesheetId),
-                head = doc.getElementsByTagName('head')[0];
+                // borrowed head detection from restyle.js
+                head = doc.head || doc.getElementsByTagName('head')[0] || doc.documentElement;
 
             (legacyStylesheet) && head.removeChild(legacyStylesheet);
 
